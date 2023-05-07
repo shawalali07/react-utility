@@ -1,9 +1,28 @@
+export const uniqueSimpleArraySet = (arr) => {
+  const uniqueArr = [...new Set(arr)];
+  return uniqueArr;
+};
+
+export const uniqueSimpleArrayFilter = (arr) => {
+  const uniqueArr = arr.filter((name, index) => arr.indexOf(name) === index);
+  return uniqueArr;
+};
+
 export const uniqueArrayOfObjects = (arr) => {
   const uniqueArr = [
     ...new Map(arr?.map((item) => [item['id'], item]))?.values(),
   ];
-
   return uniqueArr;
+};
+
+export const uniqueArrayOfObjectsReduce1 = (arr) => {
+  const uniqueNames = arr.reduce((acc, curr) => {
+    if (acc.findIndex((obj) => obj.id === curr.id) === -1) {
+      acc.push(curr);
+    }
+    return acc;
+  }, []);
+  return uniqueNames;
 };
 
 export const mutateArrayLoop = (arr) => {
@@ -18,16 +37,15 @@ export const mutateArrayLoop = (arr) => {
   return newData;
 };
 
-export const mutateArray = (data) => {
-  const newData = data.reduce((acc, curr) => {
-    const found = acc.find((a) => a.league.name === curr.league.name);
-    if (!found) {
-      acc.push({ ...curr, [curr.league.name]: [curr] });
+export const mutateArray = (arr) => {
+  const newData = arr.reduce((acc, curr) => {
+    if (!acc[curr?.league?.name]) {
+      acc[curr?.league?.name] = [curr];
     } else {
-      found[curr.league.name].push(curr);
+      acc[curr?.league?.name]?.push(curr);
     }
     return acc;
-  }, []);
+  }, {});
   return newData;
 };
 

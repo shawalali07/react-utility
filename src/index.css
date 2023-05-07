@@ -42,3 +42,77 @@
 .inputs {
   padding: 10px;
 }
+
+.parent {
+  background-color: rgb(60, 8, 109);
+  height: 400px;
+  width: 400px;
+}
+
+.child {
+  background-color: red;
+  height: 50%;
+  width: 50%;
+}
+
+.parent:hover .child {
+  animation: left-to-right 1s ease-in forwards 3;
+}
+
+@keyframes left-to-right {
+  0% {
+    transform: translateX(0%);
+  }
+
+  33% {
+    transform: translateY(100%);
+  }
+  66% {
+    transform: translateY(100%) translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.try {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.countries {
+  margin: 10px;
+  padding: 10px;
+  background-color: #191919;
+  color: white;
+  width: 250px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.countryItem {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.countryUl {
+  padding: 0;
+}
+
+.left {
+  gap: 10px;
+  display: flex;
+}
+
+.right {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.dropdownField {
+  padding: 5px;
+}

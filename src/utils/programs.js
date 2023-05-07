@@ -1,4 +1,3 @@
-export const nothing = () => {};
 // note 1
 // const obj = {
 //   data: {
@@ -45,38 +44,5 @@ export const nothing = () => {};
 //note 4
 // const numbers = Array.from({ length: 8 }, (_, i) => i + 1);
 
-{
-  /* <div style={{ paddingLeft: '20px' }}>
-      {inputs?.map((input, index) => (
-        <div
-          key={input.id}
-          style={{ display: 'flex', gap: '20px', padding: '20px' }}
-        >
-          <select name='name' onChange={(e) => onChange(e, index)}>
-            {people?.map((p) => (
-              <option
-                value={
-                  input.name && input.name === p.name ? input.name : p.name
-                }
-              >
-                {input.name && input.name === p.name ? input.name : p.name}
-              </option>
-            ))}
-          </select>
-          <select name='hours' onChange={(e) => onChange(e, index)}>
-            {numbers?.map((num, index) => (
-              <option
-                value={input.hours && input.hours === num ? input.hours : num}
-              >
-                {input.hours && input.hours === num ? input.hours : num}
-              </option>
-            ))}
-          </select>
-          <button onClick={() => removeInput(index)}>Remove Resource</button>
-        </div>
-      ))}
-      <div style={{ display: 'flex', gap: '10px' }}>
-        <button onClick={addInput}>Add Resource</button>
-      </div>
-    </div> */
-}
+// note 5
+// const results = people.filter((person) => person.name.indexOf('shawal')); // returns array excluding matched result

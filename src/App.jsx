@@ -1,30 +1,21 @@
 import { useEffect, useState } from 'react';
-import ImageFallback from './components/hoc/ImageFallback';
-import ResourceAllocation from './components/hoc/Resource';
-import { cart, people } from './constants/data';
-import { nothing } from './utils/programs';
+import { data, people } from './constants/data';
 
 function App() {
-  let count = 4;
-  const checkConditions = () => {
-    debugger;
-    if (count === 1) {
-      debugger;
-      console.log('count 1');
-    } else if (count === 2) {
-      debugger;
-      console.log('count 2');
-    } else if (count === 3) {
-      debugger;
-      console.log('count 3');
-    } else {
-      debugger;
-      console.log('else');
-    }
+  const changeData = (arr) => {
+    const newData = arr.reduce((acc, curr) => {
+      if (!acc[curr?.league?.name]) {
+        acc[curr?.league?.name] = [curr];
+      } else {
+        acc[curr?.league?.name]?.push(curr);
+      }
+      return acc;
+    }, []);
+    return newData;
   };
 
-  checkConditions();
-
-  return <div className='app'>React Hooks</div>;
+  const newArr = changeData(people);
+  console.log(newArr);
+  return <div>hello</div>;
 }
 export default App;

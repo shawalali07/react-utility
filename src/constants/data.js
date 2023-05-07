@@ -129,10 +129,18 @@ export const people = [
   { id: 2, name: 'junaid', age: 24 },
   { id: 3, name: 'hasnat', age: 28 },
   { id: 4, name: 'akram', age: 27 },
+  { id: 1, name: 'shawal', age: 26 },
   { id: 5, name: 'nouman', age: 29 },
 ];
 
-export const names = ['junaid', 'nouman', 'hasnat', 'usman', 'shawal'];
+export const names = [
+  'junaid',
+  'nouman',
+  'hasnat',
+  'shawal',
+  'usman',
+  'shawal',
+];
 
 export const profession = [
   'react developer',
